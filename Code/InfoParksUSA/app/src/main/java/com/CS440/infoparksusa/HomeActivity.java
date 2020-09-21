@@ -25,7 +25,7 @@ public class HomeActivity extends AppCompatActivity {
                         startActivity(new Intent(HomeActivity.this,MainActivity.class));
                         finish();
 
-                        //if you need some code to run when the delay expires
+                        //set up a small delay
                     }
 
                 }, 1000);
