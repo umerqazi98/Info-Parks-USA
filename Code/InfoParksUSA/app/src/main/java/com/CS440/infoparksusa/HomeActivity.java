@@ -22,10 +22,10 @@ public class HomeActivity extends AppCompatActivity {
                     @Override
 
                     public void run(){
+                        //set up a small delay and then start the next activity
                         startActivity(new Intent(HomeActivity.this,MainActivity.class));
-                        finish();
+                        finish(); // necessary so this activity is compeltely destroyed (thus the user cant "back" into it)
 
-                        //set up a small delay
                     }
 
                 }, 1000);
