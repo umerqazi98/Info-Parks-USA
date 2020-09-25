@@ -3,6 +3,7 @@ package com.CS440.infoparksusa;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 public class UserInfoActivity extends AppCompatActivity {
 
