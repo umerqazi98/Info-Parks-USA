@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">InfoParks USA</string>
+
+    <string-array name="national_parks">
+        <item>Yosemite National Park</item>
+        <item>Yellowstone National Park</item>
+        <item>Grand Teton National Park</item>
+        <item>Glacier National Park</item>
+        <item>Arches National Park</item>
+        <item>Carlsbad caverns National Park</item>
+        <item>Zion National Park</item>
+    </string-array>
+
 </resources>
