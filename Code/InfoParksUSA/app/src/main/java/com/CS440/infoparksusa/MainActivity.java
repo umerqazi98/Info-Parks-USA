@@ -8,6 +8,8 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +19,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final EditText loginInfo = (EditText) findViewById(R.id.loginInfo);
+        final EditText passwordInfoEdit = (EditText) findViewById(R.id.editTextPassword);
+
         final Button button = (Button) findViewById(R.id.create_account_button);
+        final Button loginButton = (Button) findViewById(R.id.button);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,6 +38,25 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String loginText = loginInfo.getText().toString();
+                String passwordText = passwordInfoEdit.getText().toString();
+                if(loginText.matches("") || passwordText.matches("")){
+                    Toast.makeText(MainActivity.this, "You did not enter a username or password",Toast.LENGTH_SHORT).show();
+                }else {
+                    try {
+                        Intent intent = new Intent(MainActivity.this, ChooseYourParkListView.class);
+                        startActivity(intent);
+                    } catch (Exception e) {
+                        Log.e("Error:", e.toString());
+                    }
+                }
+            }
+        });
+
 
 
     }
