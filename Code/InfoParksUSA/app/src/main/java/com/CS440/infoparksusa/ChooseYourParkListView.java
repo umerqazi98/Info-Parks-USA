@@ -30,26 +30,34 @@ public class ChooseYourParkListView extends ListActivity {
     public void onListItemClick(ListView parent, View view,
                                 int position, long id) {
 
-        try {
+//        try {
+//
+//            // Process text for network transmission
+//            final TextView textView = (TextView) view;
+//            String address = (String) textView.getText();
+//            address = address.replace(' ', '+');
+//
+//            // Create Intent object for starting Google Maps application
+//            Intent geoIntent = new Intent(
+//                    Intent.ACTION_VIEW,
+//                    Uri.parse("geo:0,0?q=" + address));
+//
+//            if(geoIntent.resolveActivity(getPackageManager()) != null) {
+//                // Use the Intent to start Google Maps application using Activity.startActivity()
+//                startActivity(geoIntent);
+//
+//                Log.i("joder" + " From Ugo", "Map activity just started");
+//            }
+//        } catch (Exception e) {
+//            // Log any error messages to LogCat using Log.e()
+//            Log.e("catch", e.toString());
+//        }
 
-            // Process text for network transmission
-            final TextView textView = (TextView) view;
-            String address = (String) textView.getText();
-            address = address.replace(' ', '+');
-
-            // Create Intent object for starting Google Maps application
-            Intent geoIntent = new Intent(
-                    Intent.ACTION_VIEW,
-                    Uri.parse("geo:0,0?q=" + address));
-
-            if(geoIntent.resolveActivity(getPackageManager()) != null) {
-                // Use the Intent to start Google Maps application using Activity.startActivity()
-                startActivity(geoIntent);
-
-                Log.i("joder" + " From Ugo", "Map activity just started");
-            }
-        } catch (Exception e) {
-            // Log any error messages to LogCat using Log.e()
+        try{
+            Intent intent = new Intent(this,ParkMenu.class);
+            startActivity(intent);
+        }
+        catch (Exception e){
             Log.e("catch", e.toString());
         }
 
