@@ -54,7 +54,10 @@ public class ChooseYourParkListView extends ListActivity {
 //        }
 
         try{
+            final TextView textView = (TextView) view;
+            String address = (String) textView.getText();
             Intent intent = new Intent(this,ParkMenu.class);
+            intent.putExtra("park", address);
             startActivity(intent);
         }
         catch (Exception e){
