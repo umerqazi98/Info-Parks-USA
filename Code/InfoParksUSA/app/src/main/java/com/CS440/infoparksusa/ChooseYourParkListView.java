@@ -20,7 +20,6 @@ public class ChooseYourParkListView extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         setListAdapter(new ArrayAdapter<String>(this,
                 R.layout.activity_choose_your_park_list_view,
                 getResources().getStringArray(R.array.national_parks)));
