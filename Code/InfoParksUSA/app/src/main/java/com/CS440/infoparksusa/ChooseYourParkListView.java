@@ -57,6 +57,7 @@ public class ChooseYourParkListView extends ListActivity {
             String address = (String) textView.getText();
             Intent intent = new Intent(this,ParkMenu.class);
             intent.putExtra("park", address);
+            intent.putExtra("pos", position);
             startActivity(intent);
         }
         catch (Exception e){

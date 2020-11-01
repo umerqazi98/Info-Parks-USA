@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class ParkMenu extends AppCompatActivity {
-
+    private static String [] web_array;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +21,7 @@ public class ParkMenu extends AppCompatActivity {
         final Button packingList = (Button) findViewById(R.id.packing_list);
         final Button campingGrounds = (Button) findViewById(R.id.camping_grounds);
         final Intent intent = getIntent();
+        web_array = getResources().getStringArray(R.array.national_parks_web);
 
         map.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,10 +44,36 @@ public class ParkMenu extends AppCompatActivity {
 
             }
         });
+
+        web.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    int pos = intent.getIntExtra("pos",-1);
+                    String web_address = web_array[pos];
+                    Uri web_page = Uri.parse(web_address);
+                    Intent webIntent = new Intent(
+                            Intent.ACTION_VIEW,
+                            web_page);
+                    if (webIntent.resolveActivity(getPackageManager()) != null) {
+                        // Use the Intent to start Google Maps application using Activity.startActivity()
+                        startActivity(webIntent);
+
+                        Log.i("joder" + " CJ", "Map activity just started");
+                    }
+                } catch (Exception e) {
+                    Log.e("catch", e.toString());
+                }
+            }
+        });
+
+
     }
 
     public String getParkName(Intent intent) {
         return intent.getStringExtra("park");
 
     }
+
+
 }
