@@ -58,7 +58,7 @@ public class ChooseYourParkListView extends AppCompatActivity {
 
     }
 
-    public int indexOf(String s, String[] strings){
+    protected int indexOf(String s, String[] strings){
         int size = strings.length;
         for (int i = 0; i < size; i++){
             if (strings[i] == s && s.length() == strings[i].length()){
