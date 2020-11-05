@@ -22,6 +22,7 @@ public class PackingList extends AppCompatActivity {
     private ArrayAdapter<String> sugAdapter;
     private ListView lvItems;
     private ListView suggestedList;
+    private MyCustomAdapter e;
     int i = 0;
 
     @Override
@@ -29,7 +30,7 @@ public class PackingList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_packing_list);
         lvItems = (ListView) findViewById(R.id.lvItems); // get access to the listview
-        suggestedList = (ListView) findViewById(R.id.suggestedList);
+       // suggestedList = (ListView) findViewById(R.id.suggestedList);
         String fromI = getIntent().getStringExtra("yas");
         sugItems = new ArrayList<>();
 
@@ -40,7 +41,8 @@ public class PackingList extends AppCompatActivity {
         //readItems();
         itemsAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, items);
-        lvItems.setAdapter(itemsAdapter);
+
+        lvItems.setAdapter(new MyCustomAdapter(items,PackingList.this));
         //if(i == 0) {
             items.add("Tent");
             items.add("Bear Spray");
@@ -81,7 +83,7 @@ public class PackingList extends AppCompatActivity {
                         items.remove(pos);
                         // Refresh the adapter
                         itemsAdapter.notifyDataSetChanged();
-                        writeItems();
+                        //writeItems();
                         return true;
                     }
 
@@ -92,7 +94,7 @@ public class PackingList extends AppCompatActivity {
         EditText eT = (EditText) findViewById(R.id.etNewItem);
         String e = eT.getText().toString();
         itemsAdapter.add(e);
-        writeItems();
+        //writeItems();
         eT.setText("");
     }
 }
