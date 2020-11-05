@@ -12,7 +12,8 @@
         <activity android:name=".ParkMenu"
             android:label="@string/park_menu"></activity>
         <activity android:name=".ChooseYourParkListView"
-            android:label="@string/park_menu">
+            android:label="Choose the park where you are traveling"
+            >
         </activity>
         <activity android:name=".UserInfoActivity" />
         <activity
