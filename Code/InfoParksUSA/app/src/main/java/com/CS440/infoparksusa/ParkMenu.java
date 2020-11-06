@@ -77,6 +77,28 @@ public class ParkMenu extends AppCompatActivity {
             }
         });
 
+        campingGrounds.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    String label = "campground";
+                    Intent geoIntent = new Intent(
+                            Intent.ACTION_VIEW,
+                            Uri.parse("geo:0,0?q=" + label));
+                    if (geoIntent.resolveActivity(getPackageManager()) != null) {
+                        // Use the Intent to start Google Maps application using Activity.startActivity()
+                        startActivity(geoIntent);
+
+                        Log.i("joder" + " CJ", "Map activity just started");
+                    }
+                } catch (Exception e) {
+                    Log.e("catch", e.toString());
+                }
+
+
+            }
+        });
+
 
     }
 
