@@ -15,7 +15,7 @@
             android:label="Choose the park where you are traveling"
             ></activity>
         <activity android:name=".CalendarActivity"
-            android:label="Choose the date"
+            android:label="Choose the date you are traveling"
             ></activity>
         <activity android:name=".PackingList"
             android:label="Packing List"
