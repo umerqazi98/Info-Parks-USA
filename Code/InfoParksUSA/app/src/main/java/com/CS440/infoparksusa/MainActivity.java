@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    Intent intent = new Intent(MainActivity.this,MapsActivity.class);
+                    Intent intent = new Intent(MainActivity.this,CalendarActivity.class);
                     intent.putExtra("yas",loginInfo.getText().toString());
                     startActivity(intent);
                 }catch (Exception e){

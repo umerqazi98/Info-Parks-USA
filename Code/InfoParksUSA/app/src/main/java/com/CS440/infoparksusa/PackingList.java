@@ -14,9 +14,14 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class PackingList extends AppCompatActivity {
     private ArrayList<String> items;
+    private ArrayList<String> Summer;
+    private ArrayList<String> Spring;
+    private ArrayList<String> Fall;
     private ArrayList<String> sugItems;
     private ArrayAdapter<String> itemsAdapter;
     private ArrayAdapter<String> sugAdapter;
@@ -24,18 +29,21 @@ public class PackingList extends AppCompatActivity {
     private ListView suggestedList;
     private MyCustomAdapter e;
     int i = 0;
-
+    List<String> summer = Arrays.asList("Shorts","Bug spray","Bear Spray");
+    List<String> winter = Arrays.asList("Heavy Jacket");
+    List<String> spring = Arrays.asList("Hiking boots or shoes", "Map/Compass", "Backpack", "Tent", "Sleeping bag and sleeping pad", "Stove and fuel", "Kitchen supplies",
+            "Plenty of food", "Water bottles and water-treatment supplies", "Weather-appropriate clothing", "Emergency and hygiene supplies", "Small repair kit", "Lightweight Jacket",
+            "Long Sleeve Shirts(for sun, bugs)", "Raincoat", "Whistle", "Hand Sanitizer", "Camera", "Binoculars");
+    List<String> fall = Arrays.asList("Bear Spray","yada");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_packing_list);
         lvItems = (ListView) findViewById(R.id.lvItems); // get access to the listview
        // suggestedList = (ListView) findViewById(R.id.suggestedList);
-        String fromI = getIntent().getStringExtra("yas");
-        sugItems = new ArrayList<>();
+        String date = getIntent().getStringExtra("date");
 
-        sugAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, sugItems);
+        Summer = new ArrayList<>();
 
         items = new ArrayList<String>();
         //readItems();
@@ -44,12 +52,19 @@ public class PackingList extends AppCompatActivity {
 
         lvItems.setAdapter(new MyCustomAdapter(items,PackingList.this));
         //if(i == 0) {
-            items.add("Tent");
-            items.add("Bear Spray");
-            items.add(fromI);
-            i++;
-        //}
-        // will need to setup listview for items
+        if(date.equals("10 ")||date.equals("11 ")||date.equals("0 ")||date.equals("1 ")){
+            items.addAll(winter);
+        }
+        else if(date.equals("2 ")|| date.equals("3 ")||date.equals("4 ")){
+            items.addAll(spring);
+        }
+        else if(date.equals("5 ") || date.equals("6 ") ||date.equals("7 ") ){
+            items.addAll(summer);
+        }
+        else if(date.equals("8 ")||date.equals("9 ") ){
+
+        }
+
         setupListViewListener();
 
     }
