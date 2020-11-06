@@ -15,10 +15,10 @@
             android:label="Choose the park where you are traveling"
             ></activity>
         <activity android:name=".CalendarActivity"
-            android:label="Choose the park where you are traveling"
+            android:label="Choose the date"
             ></activity>
         <activity android:name=".PackingList"
-            android:label="Choose the park where you are traveling"
+            android:label="Packing List"
             >
         </activity>
         <activity android:name=".UserInfoActivity" />
