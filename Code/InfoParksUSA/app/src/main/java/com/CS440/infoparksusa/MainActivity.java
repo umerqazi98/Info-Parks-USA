@@ -24,6 +24,20 @@ public class MainActivity extends AppCompatActivity {
 
         final Button button = (Button) findViewById(R.id.create_account_button);
         final Button loginButton = (Button) findViewById(R.id.button);
+        final Button testbutton = (Button) findViewById(R.id.testbutton);
+
+        testbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent intent = new Intent(MainActivity.this,CalendarActivity.class);
+                    intent.putExtra("yas",loginInfo.getText().toString());
+                    startActivity(intent);
+                }catch (Exception e){
+                    Log.e("error:", e.toString());
+                }
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">InfoParks USA</string>
 
+    <string name="title_activity_maps">Map</string>
     <string-array name="national_parks">
         <item>Yosemite National Park</item>
         <item>Yellowstone National Park</item>
