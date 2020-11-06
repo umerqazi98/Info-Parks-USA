@@ -1,58 +1,72 @@
 package com.CS440.infoparksusa;
 
-import android.app.ListActivity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class ChooseYourParkListView extends ListActivity {
-
+public class ChooseYourParkListView extends AppCompatActivity {
+    private static String[] parks;
+    private AutoCompleteTextView parkTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setListAdapter(new ArrayAdapter<String>(this,
-                R.layout.activity_choose_your_park_list_view,
-                getResources().getStringArray(R.array.national_parks)));
-    }
+        parks = getResources().getStringArray(R.array.national_parks);
 
+        setContentView(R.layout.activity_choose_your_park_list_view);
 
-    public void onListItemClick(ListView parent, View view,
-                                int position, long id) {
+        parkTextView = findViewById(R.id.actv);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1, parks);
+        parkTextView.setAdapter(adapter);
 
-        try {
-
-            // Process text for network transmission
-            final TextView textView = (TextView) view;
-            String address = (String) textView.getText();
-            address = address.replace(' ', '+');
-
-            // Create Intent object for starting Google Maps application
-            Intent geoIntent = new Intent(
-                    Intent.ACTION_VIEW,
-                    Uri.parse("geo:0,0?q=" + address));
-
-            if(geoIntent.resolveActivity(getPackageManager()) != null) {
-                // Use the Intent to start Google Maps application using Activity.startActivity()
-                startActivity(geoIntent);
-
-                Log.i("joder" + " From Ugo", "Map activity just started");
+        parkTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                try{
+                    final TextView textView = (TextView) view;
+                    final String address = (String) textView.getText();
+                    final int pos = indexOf(address,parks);
+                    Intent intent = new Intent(view.getContext(), ParkMenu.class);
+                    intent.putExtra("park", address);
+                    intent.putExtra("pos", pos);
+//                    Log.e("AutoCompleateOnclick", "pos:" + pos);
+//                    Log.e("AutoCompleateOnclick", "long:" + l);
+                    startActivity(intent);
+                }
+                catch (Exception e){
+                    Log.e("catch", e.toString());
+                }
             }
-        } catch (Exception e) {
-            // Log any error messages to LogCat using Log.e()
-            Log.e("catch", e.toString());
-        }
+        });
+
 
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        parkTextView.setText("");
+
+    }
+
+    protected int indexOf(String s, String[] strings){
+        int size = strings.length;
+        for (int i = 0; i < size; i++){
+            if (strings[i] == s && s.length() == strings[i].length()){
+                return i;
+            }
+        }
+        return -1;
+
+    }
 
 }
