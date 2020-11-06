@@ -29,12 +29,10 @@ public class PackingList extends AppCompatActivity {
     private ListView suggestedList;
     private MyCustomAdapter e;
     int i = 0;
-    List<String> summer = Arrays.asList("Shorts","Bug spray","Bear Spray");
-    List<String> winter = Arrays.asList("Heavy Jacket");
-    List<String> spring = Arrays.asList("Hiking boots or shoes", "Map/Compass", "Backpack", "Tent", "Sleeping bag and sleeping pad", "Stove and fuel", "Kitchen supplies",
-            "Plenty of food", "Water bottles and water-treatment supplies", "Weather-appropriate clothing", "Emergency and hygiene supplies", "Small repair kit", "Lightweight Jacket",
-            "Long Sleeve Shirts(for sun, bugs)", "Raincoat", "Whistle", "Hand Sanitizer", "Camera", "Binoculars");
-    List<String> fall = Arrays.asList("Bear Spray","yada");
+    List<String> summer = Arrays.asList("Shorts","Sunscreen", "Sunglasses","Baseball Cap");
+    List<String> winter = Arrays.asList("Heavy Jacket","Gloves","Winter Hat","Boots");
+    List<String> spring = Arrays.asList("Light Jacket","Bug repellant","Bear Spray","Umbrella");
+    List<String> fall = Arrays.asList("Rain Jacket","Beanie","Light bottoms","Waterproof shoes");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,31 +60,13 @@ public class PackingList extends AppCompatActivity {
             items.addAll(summer);
         }
         else if(date.equals("8 ")||date.equals("9 ") ){
-
+            items.addAll(fall);
         }
 
         setupListViewListener();
 
     }
-    private void readItems() {
-        File filesDir = getFilesDir();
-        File todoFile = new File(filesDir, "todo.txt");
-        try {
-            items = new ArrayList<String>(FileUtils.readLines(todoFile));
-        } catch (IOException e) {
-            items = new ArrayList<String>();
-        }
-    }
 
-    private void writeItems() {
-        File filesDir = getFilesDir();
-        File todoFile = new File(filesDir, "todo.txt");
-        try {
-            FileUtils.writeLines(todoFile, items);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     private void setupListViewListener() {
         lvItems.setOnItemLongClickListener(

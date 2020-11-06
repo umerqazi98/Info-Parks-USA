@@ -70,14 +70,18 @@ public class ParkMenu extends AppCompatActivity {
             }
         });
 
-//        packingList.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
 
+        packingList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                    Intent calenderIntent = new Intent(ParkMenu.this,CalendarActivity.class);
+                    startActivity(calenderIntent);
+                }catch (Exception e){
 
+                }
+            }
+        });
         campingGrounds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
