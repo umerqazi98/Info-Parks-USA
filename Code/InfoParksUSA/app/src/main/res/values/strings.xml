@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">InfoParks USA</string>
 
+    <string name="title_activity_maps">Map</string>
     <string-array name="national_parks">
         <item>Yosemite National Park</item>
         <item>Yellowstone National Park</item>
@@ -22,7 +23,7 @@
         <item>https://www.nps.gov/yell/index.htm</item>
         <item>https://www.nps.gov/grte/index.htm</item>
         <item>https://www.nps.gov/glac/index.htm</item>
-        <item>https://www.nps.gov/arch/index.htmk</item>
+        <item>https://www.nps.gov/arch/index.htm</item>
         <item>https://www.nps.gov/cave/index.htm</item>
         <item>https://www.nps.gov/zion/index.htm</item>
         <item>https://www.nps.gov/hosp/index.htm</item>

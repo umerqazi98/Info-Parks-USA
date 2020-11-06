@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         final Button button = (Button) findViewById(R.id.create_account_button);
         final Button loginButton = (Button) findViewById(R.id.button);
 
+
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
