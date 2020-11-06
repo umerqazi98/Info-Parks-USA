@@ -18,7 +18,7 @@
             android:label="Choose the date you are traveling"
             ></activity>
         <activity android:name=".PackingList"
-            android:label="Packing List"
+            android:label="Your Packing List"
             >
         </activity>
         <activity android:name=".UserInfoActivity" />
