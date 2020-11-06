@@ -77,6 +77,7 @@ public class ParkMenu extends AppCompatActivity {
 //            }
 //        });
 
+
         campingGrounds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
