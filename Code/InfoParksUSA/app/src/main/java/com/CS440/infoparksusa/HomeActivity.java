@@ -1,15 +1,13 @@
 package com.CS440.infoparksusa;
 
+import android.content.Intent;
+import android.os.Bundle;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
 import java.util.Timer;
 import java.util.TimerTask;
-
-import android.os.Handler;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -24,7 +22,7 @@ public class HomeActivity extends AppCompatActivity {
                     public void run(){
                         //set up a small delay and then start the next activity
                         startActivity(new Intent(HomeActivity.this,MainActivity.class));
-                        finish(); // necessary so this activity is compeltely destroyed (thus the user cant "back" into it)
+                        finish(); // necessary so this activity is completely destroyed (thus the user cant "back" into it)
 
                     }
 
