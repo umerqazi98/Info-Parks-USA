@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
     android:orientation="vertical"
-    android:gravity="top">
+    android:gravity="top"
+    android:background="@color/colorPrimary">
 
 
 
@@ -14,7 +16,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter park name"
+        android:textColorHighlight="#FFFFFF"
         android:completionThreshold="1"/>
 
+    <Button
+        android:id="@+id/camping_grounds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@android:dimen/notification_large_icon_height"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="camping near me"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight=".1"
+        app:srcCompat="@drawable/arches" />
 
 </LinearLayout>

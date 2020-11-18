@@ -8,10 +8,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ParkMenu extends AppCompatActivity {
     private static String [] web_array;
+    private final static Integer [] park_pics = {R.drawable.yosemite, R.drawable.yellowstone, R.drawable.teton, R.drawable.glacier,
+                                                R.drawable.arches, R.drawable.carlsbad};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,14 +27,20 @@ public class ParkMenu extends AppCompatActivity {
         final Button campingGrounds = (Button) findViewById(R.id.camping_grounds);
         final Intent intent = getIntent();
         final String park = getParkName(intent);
+        final ImageView parkPic = findViewById(R.id.park_pic);
+        final int pos = intent.getIntExtra("pos",-1);
         textView.setText(park);
         web_array = getResources().getStringArray(R.array.national_parks_web);
+
+        parkPic.setImageResource(park_pics[pos]);
 
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    String address = park.replace(" ", "+");
+
+                    final String address = park.replace(" ", "+");
+                    Log.e("map:", "park:" + park);
                     Intent geoIntent = new Intent(
                             Intent.ACTION_VIEW,
                             Uri.parse("geo:0,0?q=" + address));
@@ -52,7 +61,6 @@ public class ParkMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    int pos = intent.getIntExtra("pos",-1);
                     String web_address = web_array[pos];
                     Uri web_page = Uri.parse(web_address);
                     Intent webIntent = new Intent(
@@ -82,27 +90,30 @@ public class ParkMenu extends AppCompatActivity {
                 }
             }
         });
-        campingGrounds.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    String label = "campground";
-                    Intent geoIntent = new Intent(
-                            Intent.ACTION_VIEW,
-                            Uri.parse("geo:0,0?q=" + label));
-                    if (geoIntent.resolveActivity(getPackageManager()) != null) {
-                        // Use the Intent to start Google Maps application using Activity.startActivity()
-                        startActivity(geoIntent);
-
-                        Log.i("joder" + " CJ", "Map activity just started");
-                    }
-                } catch (Exception e) {
-                    Log.e("catch", e.toString());
-                }
 
 
-            }
-        });
+
+//        campingGrounds.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                try {
+//                    String label = "campground";
+//                    Intent geoIntent = new Intent(
+//                            Intent.ACTION_VIEW,
+//                            Uri.parse("geo:0,0?q=" + label));
+//                    if (geoIntent.resolveActivity(getPackageManager()) != null) {
+//                        // Use the Intent to start Google Maps application using Activity.startActivity()
+//                        startActivity(geoIntent);
+//
+//                        Log.i("joder" + " CJ", "Map activity just started");
+//                    }
+//                } catch (Exception e) {
+//                    Log.e("catch", e.toString());
+//                }
+//
+//
+//            }
+//        });
 
 
     }
