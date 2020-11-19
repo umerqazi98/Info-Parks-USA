@@ -22,7 +22,6 @@ import static androidx.core.content.ContextCompat.startActivity;
 public class AutoCompleteParkAdapter extends ArrayAdapter<parkItem> {
 
     private List<parkItem> parkListFull;
-    public static int pos = 0;
 
 
     public AutoCompleteParkAdapter(@NonNull Context context, @NonNull List<parkItem> parkList) {
@@ -59,12 +58,15 @@ public class AutoCompleteParkAdapter extends ArrayAdapter<parkItem> {
             public void onClick(View view) {
                 try{
                     final String address = parkItem1.getParkName();
-                    final int pos = position;
+                    final int resId = parkItem1.getParkImage();
+                    final String webAddress= parkItem1.getWebAddress();
                     Intent intent = new Intent(view.getContext(), ParkMenu.class);
                     intent.putExtra("park", address);
-                    intent.putExtra("pos", pos);
-//                    Log.e("AutoCompleateOnclick", "pos:" + pos);
-//                    Log.e("AutoCompleateOnclick", "long:" + l);
+                    intent.putExtra("pos", resId);
+                    intent.putExtra("web", webAddress);
+                    Log.e("AutoCompleateOnclick", "pos:" + resId);
+                    Log.e("AutoCompleateOnclick", "address:" + address);
+                    Log.e("AutoCompleateOnclick", "web:" + webAddress);
                     startActivity(getContext(), intent, null);
                 }
                 catch (Exception e){

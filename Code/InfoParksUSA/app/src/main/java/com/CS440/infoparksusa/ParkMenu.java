@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ParkMenu extends AppCompatActivity {
-    private static String[] web_array;
+//    private static String[] web_array;
     private final static Integer[] park_pics = {R.drawable.yosemite, R.drawable.yellowstone, R.drawable.teton, R.drawable.glacier,
             R.drawable.arches, R.drawable.carlsbad};
     private List<parkItem> parkList;
@@ -33,11 +33,12 @@ public class ParkMenu extends AppCompatActivity {
         final Intent intent = getIntent();
         final String park = getParkName(intent);
         final ImageView parkPic = findViewById(R.id.park_pic);
-        final int pos = intent.getIntExtra("pos", -1);
-        textView.setText(park);
-        web_array = getResources().getStringArray(R.array.national_parks_web);
 
-        parkPic.setImageResource(park_pics[pos]);
+        final int imageResId = intent.getIntExtra("pos", -1);
+        textView.setText(park);
+//        web_array = getResources().getStringArray(R.array.national_parks_web);
+
+        parkPic.setImageResource(imageResId);
 
         map.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +67,7 @@ public class ParkMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    String web_address = web_array[pos];
+                    String web_address = intent.getStringExtra("web");
                     Uri web_page = Uri.parse(web_address);
                     Intent webIntent = new Intent(
                             Intent.ACTION_VIEW,
@@ -74,7 +75,6 @@ public class ParkMenu extends AppCompatActivity {
                     if (webIntent.resolveActivity(getPackageManager()) != null) {
                         // Use the Intent to start Google Maps application using Activity.startActivity()
                         startActivity(webIntent);
-
                         Log.i("joder" + " CJ", "Map activity just started");
                     }
                 } catch (Exception e) {
