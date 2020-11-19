@@ -13,10 +13,16 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ChooseYourParkListView extends AppCompatActivity {
     private static String[] parks;
     private AutoCompleteTextView parkTextView;
     private Button campingGrounds;
+    private final static Integer[] park_pics = {R.drawable.yosemite, R.drawable.yellowstone, R.drawable.teton, R.drawable.glacier,
+            R.drawable.arches, R.drawable.carlsbad};
+    private List<parkItem> parkList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +31,19 @@ public class ChooseYourParkListView extends AppCompatActivity {
         setContentView(R.layout.activity_choose_your_park_list_view);
         parks = getResources().getStringArray(R.array.national_parks);
         campingGrounds = findViewById(R.id.camping_grounds);
-
         parkTextView = findViewById(R.id.actv);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, parks);
+
+
+
+        fillParkList();
+
+        final AutoCompleteParkAdapter adapter = new AutoCompleteParkAdapter(this, parkList);
+
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+//                android.R.layout.simple_list_item_1, parks);
+
         parkTextView.setAdapter(adapter);
+
 
         parkTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -95,6 +109,13 @@ public class ChooseYourParkListView extends AppCompatActivity {
         }
         return -1;
 
+    }
+
+    private void fillParkList(){
+        parkList = new ArrayList<>();
+        for (int i = 0; i < 6; i++){
+            parkList.add(new parkItem(parks[i],park_pics[i]));
+        }
     }
 
 }

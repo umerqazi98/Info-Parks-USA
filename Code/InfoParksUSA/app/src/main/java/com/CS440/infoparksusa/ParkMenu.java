@@ -11,10 +11,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ParkMenu extends AppCompatActivity {
-    private static String [] web_array;
-    private final static Integer [] park_pics = {R.drawable.yosemite, R.drawable.yellowstone, R.drawable.teton, R.drawable.glacier,
-                                                R.drawable.arches, R.drawable.carlsbad};
+    private static String[] web_array;
+    private final static Integer[] park_pics = {R.drawable.yosemite, R.drawable.yellowstone, R.drawable.teton, R.drawable.glacier,
+            R.drawable.arches, R.drawable.carlsbad};
+    private List<parkItem> parkList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +33,7 @@ public class ParkMenu extends AppCompatActivity {
         final Intent intent = getIntent();
         final String park = getParkName(intent);
         final ImageView parkPic = findViewById(R.id.park_pic);
-        final int pos = intent.getIntExtra("pos",-1);
+        final int pos = intent.getIntExtra("pos", -1);
         textView.setText(park);
         web_array = getResources().getStringArray(R.array.national_parks_web);
 
@@ -82,15 +87,14 @@ public class ParkMenu extends AppCompatActivity {
         packingList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try{
-                    Intent calenderIntent = new Intent(ParkMenu.this,CalendarActivity.class);
+                try {
+                    Intent calenderIntent = new Intent(ParkMenu.this, CalendarActivity.class);
                     startActivity(calenderIntent);
-                }catch (Exception e){
+                } catch (Exception e) {
 
                 }
             }
         });
-
 
 
 //        campingGrounds.setOnClickListener(new View.OnClickListener() {
@@ -122,6 +126,8 @@ public class ParkMenu extends AppCompatActivity {
         return intent.getStringExtra("park");
 
     }
+
+
 
 
 }

@@ -108,26 +108,26 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--    <Button-->
-<!--        android:id="@+id/camping_grounds"-->
-<!--        android:layout_width="226dp"-->
-<!--        android:layout_height="49dp"-->
-<!--        android:layout_marginStart="88dp"-->
-<!--        android:layout_marginLeft="88dp"-->
-<!--        android:layout_marginTop="70dp"-->
-<!--        android:layout_marginBottom="249dp"-->
-<!--        android:background="@drawable/buttonshape"-->
-<!--        android:clickable="false"-->
-<!--        android:shadowColor="#A8A8A8"-->
-<!--        android:shadowDx="0"-->
-<!--        android:shadowDy="0"-->
-<!--        android:shadowRadius="5"-->
-<!--        android:text="camping near me"-->
-<!--        android:textColor="#FFFFFF"-->
-<!--        android:textSize="22sp"-->
-<!--        android:visibility="invisible"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/packing_list" />-->
+    <!--        android:id="@+id/camping_grounds"-->
+    <!--        android:layout_width="226dp"-->
+    <!--        android:layout_height="49dp"-->
+    <!--        android:layout_marginStart="88dp"-->
+    <!--        android:layout_marginLeft="88dp"-->
+    <!--        android:layout_marginTop="70dp"-->
+    <!--        android:layout_marginBottom="249dp"-->
+    <!--        android:background="@drawable/buttonshape"-->
+    <!--        android:clickable="false"-->
+    <!--        android:shadowColor="#A8A8A8"-->
+    <!--        android:shadowDx="0"-->
+    <!--        android:shadowDy="0"-->
+    <!--        android:shadowRadius="5"-->
+    <!--        android:text="camping near me"-->
+    <!--        android:textColor="#FFFFFF"-->
+    <!--        android:textSize="22sp"-->
+    <!--        android:visibility="invisible"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/packing_list" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
