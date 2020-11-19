@@ -27,8 +27,9 @@ public class PackingList extends AppCompatActivity {
     int i = 0;
     List<String> summer = Arrays.asList("Shorts","Sunscreen", "Sunglasses","Baseball Cap");
     List<String> winter = Arrays.asList("Heavy Jacket","Gloves","Winter Hat","Boots");
-    List<String> spring = Arrays.asList("Light Jacket","Bug repellant","Bear Spray","Umbrella");
+    List<String> spring = Arrays.asList("Light Jacket","Bug repellent","Bear Spray","Umbrella");
     List<String> fall = Arrays.asList("Rain Jacket","Beanie","Light bottoms","Waterproof shoes");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

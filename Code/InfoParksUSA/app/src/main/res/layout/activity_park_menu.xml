@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".ParkMenu"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ParkMenu">
 
 
     <TextView
@@ -18,10 +18,14 @@
         android:layout_marginTop="76dp"
         android:gravity="center_horizontal"
         android:padding="16dp"
+        android:shadowColor="@color/colorAccent"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
         android:text="TextView"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#673D02"
+        android:textColor="#2A1C10"
         android:textColorHighlight="@color/colorAccent"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -32,60 +36,98 @@
 
     <Button
         android:id="@+id/park_map"
-        android:layout_width="323dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="39dp"
-        android:layout_marginLeft="39dp"
+        android:layout_width="226dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
         android:layout_marginTop="200dp"
-        android:layout_marginEnd="49dp"
-        android:layout_marginRight="49dp"
         android:layout_marginBottom="30dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
         android:text="Map"
+        android:textColor="#FFFFFF"
+        android:textSize="29sp"
         app:layout_constraintBottom_toTopOf="@+id/web"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/web"
-        android:layout_width="323dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="39dp"
-        android:layout_marginLeft="39dp"
-        android:layout_marginEnd="49dp"
-        android:layout_marginRight="49dp"
+
+        android:layout_width="226dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
         android:layout_marginBottom="30dp"
+        android:background="@drawable/buttonshape"
+
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
         android:text="Web"
+        android:textColor="#FFFFFF"
+        android:textSize="29sp"
         app:layout_constraintBottom_toTopOf="@+id/packing_list"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/park_map" />
 
     <Button
         android:id="@+id/packing_list"
-        android:layout_width="323dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="39dp"
-        android:layout_marginLeft="39dp"
+
+        android:layout_width="226dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
         android:layout_marginBottom="30dp"
+        android:background="@drawable/buttonshape"
+
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
         android:text="packing list "
+        android:textColor="#FFFFFF"
+        android:textSize="29sp"
         app:layout_constraintBottom_toTopOf="@id/park_map"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/web" />
 
-    <Button
-        android:id="@+id/camping_grounds"
-        android:layout_width="323dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="39dp"
-        android:layout_marginLeft="39dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginBottom="249dp"
-        android:text="camping near me"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <ImageView
+        android:id="@+id/park_pic"
+        android:layout_width="329dp"
+        android:layout_height="227dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="448dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/packing_list" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <Button-->
+    <!--        android:id="@+id/camping_grounds"-->
+    <!--        android:layout_width="226dp"-->
+    <!--        android:layout_height="49dp"-->
+    <!--        android:layout_marginStart="88dp"-->
+    <!--        android:layout_marginLeft="88dp"-->
+    <!--        android:layout_marginTop="70dp"-->
+    <!--        android:layout_marginBottom="249dp"-->
+    <!--        android:background="@drawable/buttonshape"-->
+    <!--        android:clickable="false"-->
+    <!--        android:shadowColor="#A8A8A8"-->
+    <!--        android:shadowDx="0"-->
+    <!--        android:shadowDy="0"-->
+    <!--        android:shadowRadius="5"-->
+    <!--        android:text="camping near me"-->
+    <!--        android:textColor="#FFFFFF"-->
+    <!--        android:textSize="22sp"-->
+    <!--        android:visibility="invisible"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/packing_list" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,14 +8,28 @@
     tools:context=".MainActivity">
 
 
+    <ImageView
+        android:id="@+id/login_pic"
+        android:layout_width="365dp"
+        android:layout_height="196dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/symbol" />
+
     <EditText
         android:id="@+id/loginInfo"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="256dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Login Info"
+        android:inputType="textPersonName"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toTopOf="@+id/passwordInfo"
         app:layout_constraintEnd_toEndOf="parent"
