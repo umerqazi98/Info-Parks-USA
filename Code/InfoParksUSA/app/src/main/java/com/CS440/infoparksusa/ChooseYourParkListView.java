@@ -41,31 +41,10 @@ public class ChooseYourParkListView extends AppCompatActivity {
 
         final AutoCompleteParkAdapter adapter = new AutoCompleteParkAdapter(this, parkList);
 
-//        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-//                android.R.layout.simple_list_item_1, parks);
+
 
         parkTextView.setAdapter(adapter);
 
-
-//        parkTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                try{
-//                    final TextView textView = (TextView) view;
-//                    final String address = (String) textView.getText();
-//                    final int pos = indexOf(address,parks);
-//                    Intent intent = new Intent(view.getContext(), ParkMenu.class);
-//                    intent.putExtra("park", address);
-//                    intent.putExtra("pos", pos);
-//                    Log.e("AutoCompleateOnclick", "pos:" + pos);
-//                    Log.e("AutoCompleateOnclick", "long:" + l);
-//                    startActivity(intent);
-//                }
-//                catch (Exception e){
-//                    Log.e("catch", e.toString());
-//                }
-//            }
-//        });
 
 
         campingGrounds.setOnClickListener(new View.OnClickListener() {

@@ -3,12 +3,12 @@
 
     <string name="title_activity_maps">Map</string>
     <string-array name="national_parks">
-        <item>Yosemite National Park</item>
-        <item>Yellowstone National Park</item>
-        <item>Grand Tetons National Park</item>
-        <item>Glacier National Park</item>
-        <item>Arches National Park</item>
-        <item>Carlsbad Caverns National Park</item>
+        <item>Yosemite National Park, CA</item>
+        <item>Yellowstone National Park, WY</item>
+        <item>Grand Tetons National Park, WY</item>
+        <item>Glacier National Park, MT</item>
+        <item>Arches National Park, UT</item>
+        <item>Carlsbad Caverns National Park, NM</item>
 <!--        <item>Zion National Park</item>-->
 <!--        <item>Hot Springs National Park</item>-->
 <!--        <item>Redwood National and State Park</item>-->
