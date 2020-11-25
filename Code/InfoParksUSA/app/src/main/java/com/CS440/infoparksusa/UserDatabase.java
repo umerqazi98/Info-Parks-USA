@@ -40,5 +40,7 @@ public class UserDatabase {
         return false;
     }
 
+    public boolean contains(String key){return userTable.containsKey(key);}
+
 
 }

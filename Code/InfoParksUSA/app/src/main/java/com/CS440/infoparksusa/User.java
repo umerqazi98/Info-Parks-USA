@@ -46,25 +46,19 @@ public class User {
         return phone;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
-    private String getPassword() {
+
+    public String getPassword() {
         return password;
     }
 
-    private void setPassword(String password) {
-        this.password = password;
-    }
+
 
     public boolean changePassword(String newPassword){
         this.password = newPassword;
