@@ -27,11 +27,11 @@ public class UserInfoActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name = userName.getText().toString();
-                String address = userAddress.getText().toString();
-                String phone = userPhone.getText().toString();
-                String email = userEmail.getText().toString();
-                String password = userPassword.getText().toString();
+                final String name = userName.getText().toString();
+                final String address = userAddress.getText().toString();
+                final String phone = userPhone.getText().toString();
+                final String email = userEmail.getText().toString();
+                final String password = userPassword.getText().toString();
                 if (name.matches("") ||
                         address.matches("") ||
                         phone.matches("") ||
@@ -45,6 +45,11 @@ public class UserInfoActivity extends AppCompatActivity {
                     }
 
                 } else {
+                    try {
+                        User newUser = new User(name,address,phone,email,password);
+                    } catch (Exception e) {
+                        e.toString();
+                    }
                     Intent intent = new Intent(UserInfoActivity.this, ChooseYourParkListView.class);
                     startActivity(intent);
                 }
@@ -54,4 +59,6 @@ public class UserInfoActivity extends AppCompatActivity {
         });
 
     }
+
+
 }
